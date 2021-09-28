@@ -10,6 +10,13 @@ const Box = styled.div`
     display: grid;
     grid-template-columns: 30% 70%;
     align-items: left;
+
+    @media (max-width: 700px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-content: center;
+    }
 `
 
 const ChoiceBox = styled.div`
@@ -32,6 +39,15 @@ const ChoiceTitle = styled.div`
     margin-top: 10px;
     color: #003d45;
     font-size: 20px;
+
+    @media (max-width: 768px) {
+        font-size: 15px;
+        font-weight: 400;
+    }
+
+    @media (max-width: 400px) {
+        font-size: 10px;
+        font-weight: 400;
 `
 
 const ChoiceContent = styled.div`
@@ -42,6 +58,23 @@ const ChoiceContent = styled.div`
 
     & img {
         cursor: pointer;
+    }
+
+    @media (max-width: 700px) {
+        flex-direction: row;
+    }
+`
+
+const Image = styled.img`
+    width: 150px;
+    height: auto;
+
+    @media (max-width: 700px) {
+        width: 80px;
+    }
+
+    @media (max-width: 400px) {
+        width: 60px;
     }
 `
 
@@ -56,19 +89,16 @@ function Choice(){
                 <Box>
                     <ChoiceBox>
                         <ChoiceTitle>
-                            <b>Escolha uma das opções abaixo<br />
-                            para realizar a manutenção do cadastro</b>
+                            <b>Escolha uma das opções abaixo para realizar a manutenção do cadastro</b>
                         </ChoiceTitle>
 
                         <ChoiceContent>
                             <div>
                                 <NavLink to='/client'>
                                 <figure>
-                                <img
+                                <Image
                                     src={customer} 
                                     alt='Cliente'
-                                    width={100}
-                                    height={100}
                                 />
                                 </figure>
                                 <figcaption>
@@ -79,11 +109,9 @@ function Choice(){
                             <div>
                                 <NavLink to='/product'>
                                 <figure>
-                                <img 
+                                <Image
                                     src={product} 
                                     alt='Produtos'
-                                    width={100}
-                                    height={100}
                                 />
                                 </figure>
                                 <figcaption>

@@ -2,7 +2,7 @@ import styled from "styled-components"
 import React, { useState } from "react"
 
 const InputBox = styled.input`
-    border: 1px solid #3c9ca9;
+    border: 1px solid #454545;
     border-radius: 10px;
     height: 20px;
 `
@@ -24,7 +24,7 @@ const RecordBox = styled.div`
 
 const RecordLabel = styled.label`
     text-align: left;
-    color: #003d45;
+    color: #454545;
     margin: 10px 10px 0px 10px;
 `
 
@@ -35,7 +35,7 @@ const ButtonBox = styled.div`
 `
 
 const ActionButton = styled.button`
-    background-color: #003d45;
+    background-color: #454545;
     color:#ffffff;
     border-radius: 1rem;
     width: 200px;
@@ -47,11 +47,6 @@ const ActionButton = styled.button`
     &:hover {
         cursor: pointer;
     }
-`
-
-const Msg = styled.h3`
-    color:#ff0000;
-    padding-top: 10px;
 `
 
 function ClientInput(props){
@@ -67,7 +62,7 @@ function ClientInput(props){
 
     return (
         <>
-            <RecordBox>
+            <RecordBox className='recordBox'>
                 <RecordLabel htmlFor='nameBox'>Nome Completo</RecordLabel>
                 <InputBox type='text' id='nameBox' value={name} onChange={(e) => setName(e.target.value)}/>
 
@@ -112,7 +107,7 @@ function ClientInput(props){
 
                             localStorage.setItem('client', JSON.stringify(client));
 
-                            document.getElementById('msg').innerHTML = 'Cliente gravado com sucesso!';
+                            alert('Cliente gravado com sucesso!');
                         }
                         else {
                             alert('Favor informar o nome do cliente!');
@@ -125,7 +120,7 @@ function ClientInput(props){
                         const client = JSON.parse(localStorage.getItem('client'));
 
                         if (client == null){
-                            document.getElementById('msg').innerHTML = 'Não existe cliente armazenado';
+                            alert('Não existe cliente armazenado');
                         }
                         else {
                             setName(client.name);
@@ -143,13 +138,12 @@ function ClientInput(props){
                     <ActionButton onClick={() => {
                         if (localStorage.getItem('client') != null) {
                             localStorage.removeItem('client');
-                            document.getElementById('msg').innerHTML = 'Cliente apagado com sucesso!';
+                            alert('Cliente apagado com sucesso!')
                         }
                         else
-                            document.getElementById('msg').innerHTML = 'Não existia cliente armazenado!';
+                            alert('Não existia cliente armazenado!');
                     }}>Apaga</ActionButton>
                 </ButtonBox>
-                <Msg id='msg'></Msg>            
             </RecordBox>
         </>
     )

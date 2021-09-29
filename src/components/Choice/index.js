@@ -5,6 +5,7 @@ import { Route, NavLink, HashRouter } from "react-router-dom"
 import ClientInput from '../ClientInput'
 import ProductInput from '../ProductInput'
 import BlankPage from '../BlankPage'
+import '../../index.css'
 
 const Box = styled.div`
     display: grid;
@@ -29,7 +30,7 @@ const ChoiceBox = styled.div`
     font-weight: 600;
     text-align: center;
     border-radius: 10px;
-    border: 3px solid #2f6d74;
+    border: 3px solid #252525;
 `
 
 const ChoiceTitle = styled.div`
@@ -37,7 +38,7 @@ const ChoiceTitle = styled.div`
     flex-direction: column;
     text-align: center;
     margin-top: 10px;
-    color: #003d45;
+    color: #454545;
     font-size: 20px;
 
     @media (max-width: 768px) {
@@ -79,7 +80,7 @@ const Image = styled.img`
 `
 
 const TextLn1 = styled.p`
-    color: #003d45;
+    color: #454545;
 `
 
 function Choice(){
@@ -87,7 +88,7 @@ function Choice(){
         <>
             <HashRouter>
                 <Box>
-                    <ChoiceBox>
+                    <ChoiceBox className="choiceBox">
                         <ChoiceTitle>
                             <b>Escolha uma das opções abaixo para realizar a manutenção do cadastro</b>
                         </ChoiceTitle>

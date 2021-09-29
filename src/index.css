@@ -11,3 +11,66 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.active p {
+  background-color: #d1d1d1;
+  border-radius: 8px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.darkMode {
+  background-color: #252525;
+}
+
+.darkMode b {
+  color:#d1d1d1;
+}
+
+.darkMode p {
+  color:#d1d1d1;
+}
+
+.darkMode input {
+  border-color: #252525;
+}
+
+.darkMode label {
+  color:#d1d1d1;
+}
+
+.darkMode .active p {
+  background-color: #454545;
+}
+
+.darkMode .recordBox {
+  background-color: #454545;
+}
+
+.darkMode .banner {
+  background-color: #0f0f0f;
+}
+
+.darkMode .buttonMode {
+  background-color: #d1d1d1;
+  color: #454545;
+  border-color: #d1d1d1;
+}
+
+.darkMode .choiceBox {
+  border-color: #d1d1d1;
+}
+
+.darkMode button {
+  background-color: #252525;
+}
+
+.darkMode .msgBlank {
+  color: #d1d1d1;
+}
+
+.darkMode .bannerTitle {
+  color: #d1d1d1;
+}

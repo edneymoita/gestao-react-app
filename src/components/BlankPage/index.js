@@ -13,19 +13,22 @@ const RecordBox = styled.div`
     padding: 20px;
     margin: 10px;
     min-height: 620px;
+
+    @media (max-width:400px){
+        justify-content: flex-start;
+    }
 `
 
 const Msg = styled.h3`
-    color:#ff0000;
-    padding-top: 10px;
+    color:#252525;
 `
 
 function BlankPage(){
 
     return (
         <>
-            <RecordBox>
-                <Msg id='msg'>Escolha sua opção ao lado</Msg>            
+            <RecordBox className="recordBox">
+                <Msg className="msgBlank" id='msg'>Escolha uma das opções para manter o cadastro</Msg>            
             </RecordBox>
         </>
     )

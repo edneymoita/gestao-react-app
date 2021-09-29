@@ -2,7 +2,7 @@ import styled from "styled-components"
 import React, { useState } from "react"
 
 const InputBox = styled.input`
-    border: 1px solid #3c9ca9;
+    border: 1px solid #454545;
     border-radius: 10px;
     height: 20px;
 `
@@ -24,7 +24,7 @@ const RecordBox = styled.div`
 
 const RecordLabel = styled.label`
     text-align: left;
-    color: #003d45;
+    color: #454545;
     margin: 10px 10px 0px 10px;
 `
 
@@ -35,7 +35,7 @@ const ButtonBox = styled.div`
 `
 
 const ActionButton = styled.button`
-    background-color: #003d45;
+    background-color: #454545;
     color:#ffffff;
     border-radius: 1rem;
     width: 200px;
@@ -49,11 +49,6 @@ const ActionButton = styled.button`
     }
 `
 
-const Msg = styled.h3`
-    color:#ff0000;
-    padding-top: 10px;
-`
-
 function ProductInput(props){
     const [label, setLabel] = useState('');
     const [brand, setBrand] = useState('');
@@ -65,7 +60,7 @@ function ProductInput(props){
 
     return (
         <>
-            <RecordBox>
+            <RecordBox className="recordBox">
                 <RecordLabel htmlFor='labelBox'>Rótulo</RecordLabel>
                 <InputBox type='text' id='labelBox' value={label} onChange={(e) => setLabel(e.target.value)}/>
 
@@ -102,7 +97,7 @@ function ProductInput(props){
 
                             localStorage.setItem('product', JSON.stringify(product));
 
-                            document.getElementById('msg').innerHTML = 'Produto gravado com sucesso!';
+                            alert('Produto gravado com sucesso!');
                         }
                         else {
                             alert('Favor informar o nome do produto!');
@@ -114,7 +109,7 @@ function ProductInput(props){
                         const product = JSON.parse(localStorage.getItem('product'));
 
                         if (product == null){
-                            document.getElementById('msg').innerHTML = 'Não existe produto armazenado';
+                            alert('Não existe produto armazenado');
                         }
                         else {
                             setLabel(product.label);
@@ -129,13 +124,12 @@ function ProductInput(props){
                     <ActionButton onClick={() => {
                         if (localStorage.getItem('product') != null) {
                             localStorage.removeItem('product');
-                            document.getElementById('msg').innerHTML = 'Produto apagado com sucesso!';
+                            alert('Produto apagado com sucesso!');
                         }
                         else
-                            document.getElementById('msg').innerHTML = 'Não existia produto armazenado!';
+                            alert('Não existia produto armazenado!');
                     }}>Apaga</ActionButton>
                 </ButtonBox>
-                <Msg id='msg'></Msg>            
             </RecordBox>
         </>
     )
